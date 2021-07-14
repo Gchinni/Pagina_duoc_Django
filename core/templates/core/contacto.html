@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+<!-- HEADER -->
+    <header class="wave" id="inicio">
+        <div class="container">
+            <div class="row">
+                <!-- Texto -->
+                <div class="col-md-5 text-white mt-4 ms-5 me-4" style="z-index: 1;">                                                      
+                    <h1 class="slogan"><b>Rellena el formulario</b></h1>
+                    <p class="slogan">Te puedes contactar con nosotros para realizar tu reserva de atención con tu mejor amigo.</p>
+                    <a class="btn btn-lg btn-warning" href="{% url 'formulario' %}">Formulario 
+                        <i class="bi bi-arrow-right-circle"></i></a>
+                </div>
+                <!-- Imagen --> 
+                <div class="col ms-5" style="z-index: 1;">
+                    <img class="img-fluid" width="400" src="{% static 'core/IMG/contacto.png' %}">
+                </div> 
+            </div>
+        </div>
+    </header>
+
+
+<!-- SECCION CONTACTOS -->
+    <section id="about" class="about">
+        <div class="container mb-5">
+            <div class="section-title slogan">
+                <h2>"Contactos"</h2>
+            </div>
+
+            <!-- NUMERO -->
+            <div class="row">
+                <div class="col-lg-12 mt-4 mt-lg-0 mb-3"> 
+                    <div class="d-flex member">
+                        <div class=""><img src="{% static 'core/IMG/contacto2.png' %}" class="img-fluid pic-vete" alt=""></div>
+                        <div class="slogan ps-4">
+                            <h4>Contactar con Número Telefonico</h4>
+                            <span>Puede contactar con nuestros administradores</span>
+                            <p>-En la página de Pet Manía tiene la posibilidad de comunicarse con nuestros administradores por medio de 
+                                nuestro número telefónico en donde tendrá toda la información y respuestas de sus consultas.</p>
+                                <p>(+56)78456920</p>
+                        </div>
+                    </div>
+                </div>
+
+            <!--CORREO ELECTRONICO-->
+                <div class="col-lg-12 mt-4 mt-lg-0"> 
+                    <div class="d-flex member">
+                        <div class=""><img src="{% static 'core/IMG/contacto3.png' %}" class="img-fluid pic" alt=""></div>
+                        <div class="slogan ps-4">
+                            <h4>Contactar por E-mail</h4>
+                            <span>Puedes comunicarte con nosotrso por el correo electronico</span>
+                            <p>-Contáctate con nosotros por nuestro correo electrónico E-mail, en la cual podrá consultar de una manera 
+                                mas formal y organizada si es que necesita un recibo de su formulario.</p>
+                                <p>-petmaniacenter2021@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
+
+{% block div-footer%}
+    <div class="container slogan">
+{% endblock %}

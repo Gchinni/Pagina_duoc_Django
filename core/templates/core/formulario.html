@@ -1,0 +1,101 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+
+{% block head %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src='https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js'></script>
+    
+    <script type="text/javascript" src="{% static 'core/JS/appClima.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'core/CSS/formulario.css' %}"> <!-- formulario -->
+
+{% endblock %}
+
+{% block contenido %}
+{% load crispy_forms_tags %}
+
+    <!-- <center> -->
+        <form class="mb-5" id="formulario" method="post" action="">
+            <h2 class="slogan">Formulario</h2>   
+            <div id="msj-error"></div>
+
+            <!-- <div class="container">  -->
+                
+                {% csrf_token %}
+
+                {{ form | crispy }}
+
+                <br>
+                <!-- <textarea name="mensaje" placeholder="Escriba su mensaje" class="mb-3" maxlength="50" id="mensaje"></textarea>  -->  
+                <!-- El boton de enviar debe star adentro de <a href="{% url 'resultado' %}"></a> -->
+                
+                <!-- Clases del boton enviar = waves-effect waves-light btn btn-large btn-block  accent-4 s12  -->
+                <input type="submit" class="waves-effect waves-light btn btn-large btn-block  accent-4 s12" id="enviar">
+                
+                <button type="button" class="waves-effect waves-light btn btn-large btn-block  accent-4 s12" id="btmclima" onclick="obtenerClima()">Buscar clima</button>
+                <br>
+                <input type="reset" class="mb-3" value="Limpiar" name="limpiar" id="limpiar"> 
+                
+
+            <!-- </div> -->
+            {{mensaje}}
+
+        </form>
+    <!-- </center> -->
+    
+    <section id="services" class="services">
+        <div class="container mb-5">
+            <div class="row">
+
+                <div class="col mx-5 m6 s12" id="divResultado"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--  SUCURSALES  -->
+
+
+    <section id="services" class="services">
+        <div class="container mb-5">
+            <div class="row">
+
+                <div class="col mx-5 d-flex align-items-stretch alert-primary">
+                    <div class="member mx-auto text-center">
+                        <div class="slogan pt-2 text-center">
+                            <h4>Sucursal</h4>
+                            <div class="d-flex mt-2">
+                                <a href="{% url 'index_api' %}" class="mx-auto"><i class="bi bi-geo"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+{% endblock %}
+
+{% block div-footer%}
+    <div class="container slogan text-white">
+{% endblock %}
+
+{% block body %}
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="{% static 'core/JS/vali_form.js' %}"></script>
+    
+
+{% endblock %}
